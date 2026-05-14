@@ -40,6 +40,7 @@ router.post(
         user: { id: user._id, name: user.name, email: user.email, age: user.age, gender: user.gender, height: user.height },
       });
     } catch (err) {
+      console.error('REGISTER ERROR:', err);
       res.status(500).json({ success: false, message: 'Server error', error: err.message });
     }
   }
